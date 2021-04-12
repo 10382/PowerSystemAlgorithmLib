@@ -70,8 +70,6 @@ python -u MetricEvaluateServer.py	# 指标评估服务
 
 ###能耗预测
 
-chris
-
 ### 能耗评估
 
 
