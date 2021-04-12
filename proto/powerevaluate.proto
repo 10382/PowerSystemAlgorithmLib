@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+// option java_multiple_files = true;
+// option java_package = "io.grpc.examples.powerevaluate";
+// option java_outer_classname = "PowerEvaluateProto";
+// option objc_class_prefix = "PPP";
+
+package powerevaluate;
+
+// The greeting service definition.
+service PowerEvaluateService {
+  // Sends a greeting
+  rpc PowerEvaluate (PowerEvaluateRequest) returns (PowerEvaluateReply) {}
+}
+
+// The request message containing the user's name.
+message PowerEvaluateRequest {
+  string host = 1;
+  string hostType = 2;
+  string start = 3;
+  string end = 4;
+  string algorithm = 5;
+}
+
+// The response message containing the greetings
+message PowerEvaluateReply {
+  string power = 1;
+}

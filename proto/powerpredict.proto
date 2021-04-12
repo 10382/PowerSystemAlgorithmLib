@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package powerpredict;
+
+// The greeting service definition.
+service PowerPredictService {
+  // Sends a greeting
+  rpc PowerPredict (PowerPredictRequest) returns (PowerPredictReply) {}
+}
+
+// The request message containing the user's name.
+message PowerPredictRequest {
+  string host = 1;
+  string start = 2;
+  string end = 3;
+  string algorithm = 4;
+  string type = 5;
+}
+
+// The response message containing the greetings
+message PowerPredictReply {
+  string power = 1;
+}

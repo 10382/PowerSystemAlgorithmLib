@@ -1,0 +1,11 @@
+numpy==1.16.2
+pandas==1.0.5
+grpcio==1.33.2
+protobuf==3.14.0
+grpcio-tools==1.33.2
+redis==3.0.1
+scipy==1.5.2
+scikit-learn==0.23.2
+statsmodels==0.11.1
+torch==1.4.0
+xgboost==0.90

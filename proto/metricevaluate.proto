@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package metricevaluate;
+
+// The greeting service definition.
+service MetricEvaluateService {
+  // Sends a greeting
+  rpc MetricEvaluate (MetricEvaluateRequest) returns (MetricEvaluateReply) {}
+}
+
+// The request message containing the user's name.
+message MetricEvaluateRequest {
+  string type = 1;
+  string host = 2;
+  string start = 3;
+  string end = 4;
+  string algorithm = 5;
+}
+
+// The response message containing the greetings
+message MetricEvaluateReply {
+  string metrics = 1;
+}

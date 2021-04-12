@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package retraindata;
+
+// The greeting service definition.
+service RetrainDataService {
+  // Sends a greeting
+  rpc RetrainData (RetrainDataRequest) returns (RetrainDataReply) {}
+}
+
+// The request message containing the user's name.
+message RetrainDataRequest {
+  string host = 1;
+  string hostType = 2;
+  string start = 3;
+  string end = 4;
+}
+
+// The response message containing the greetings
+message RetrainDataReply {
+  bool success = 1;
+}
