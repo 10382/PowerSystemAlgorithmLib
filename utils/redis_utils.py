@@ -43,7 +43,7 @@ def redis_ts_split(start, end, hostname, interval=100):
     new_end = (end // interval + 1) * interval - 1
     req_list = []
     for ts_start in range(new_start // interval, (new_end + 1) // interval):
-        req_list.append("%s.%d.%d" % (hostname, ts_start * interval, (ts_start * interval + interval - 1)))
+        req_list.append("{team2}.%s.%d.%d" % (hostname, ts_start * interval, (ts_start * interval + interval - 1)))
     # print(req_list)
     return req_list
 

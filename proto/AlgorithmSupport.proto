@@ -1,0 +1,22 @@
+syntax = "proto3";
+package AlgorithmSupport;
+
+option java_package = "AlgorithmSupport";
+option java_outer_classname = "AlgorithmSupportProto";
+option java_multiple_files = true;
+
+service AlgorithmSupportService {
+  rpc AlgorithmSupport (AlgorithmSupportRequest) returns (AlgorithmSupportResponse) {}
+}
+
+message AlgorithmSupportRequest {
+  string serviceType = 1;         // 服务类型：qos（QoS）、dc（数据中心能效评估）、server（服务器能耗预测）、vm（虚拟机能耗评估）、pod_p（Pod 能耗预测）、pod_e（Pod 能耗评估）。
+  string entityID = 2;            // 实体的唯一标识符。
+  string startTimestamp = 3;      // 开始时间戳。
+  string endTimestamp = 4;        // 结束时间戳。
+  string algorithm = 5;           // 算法。
+}
+
+message AlgorithmSupportResponse {
+  string result = 1;              // 算法的结果。
+}
