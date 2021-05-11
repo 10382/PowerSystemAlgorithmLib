@@ -14,10 +14,10 @@ if __name__ == "__main__":
     # # 能耗评估请求
     # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="compute01", serviceType="vm", startTimestamp="1568440031",
     #                                                                 endTimestamp="1568440031", algorithm="regtree"))
-    # # pod 分解相关请求
-    # res = stub.AlgorithmSupport(
-    #     AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="linpack11", serviceType="pod_e", startTimestamp="1568440021",
-    #                                            endTimestamp="1568440030", algorithm="regtree"))
+    # pod 分解相关请求
+    res = stub.AlgorithmSupport(
+        AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="linpack11", serviceType="pod_e", startTimestamp="1568440021",
+                                               endTimestamp="1568440030", algorithm="regtree"))
     # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="linpack11", serviceType="pod_e", startTimestamp="1568440021",
     #                                                                 endTimestamp="1568440030", algorithm="direct"))
     # # 硬件能耗分解请求
@@ -45,10 +45,10 @@ if __name__ == "__main__":
     #     AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="compute01", startTimestamp="1568294221",
     #                                                  endTimestamp="1568440030", algorithm="arima",
     #                                                  serviceType="server"))
-    res = stub.AlgorithmSupport(
-        AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="compute01", startTimestamp="1568294221",
-                                                     endTimestamp="1568440030", algorithm="darnn",
-                                                     serviceType="server"))
+    # res = stub.AlgorithmSupport(
+    #     AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="compute01", startTimestamp="1568294221",
+    #                                                  endTimestamp="1568440030", algorithm="darnn",
+    #                                                  serviceType="server"))
     # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="compute01", startTimestamp="1568510700", endTimestamp="1568510709", algorithm="empty"))
     # # pod 能耗预测
     # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="linpack11", startTimestamp="1568440021", endTimestamp="1568440030",
