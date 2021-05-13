@@ -15,21 +15,16 @@ if __name__ == "__main__":
     # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="compute01", serviceType="vm", startTimestamp="1568440031",
     #                                                                 endTimestamp="1568440031", algorithm="regtree"))
     # pod 分解相关请求
-    res = stub.AlgorithmSupport(
-        AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="linpack11", serviceType="pod_e", startTimestamp="1568440021",
-                                               endTimestamp="1568440030", algorithm="regtree"))
+    # res = stub.AlgorithmSupport(
+    #     AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="linpack11", serviceType="pod_e", startTimestamp="1568440021",
+    #                                            endTimestamp="1568440030", algorithm="regtree"))
     # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="linpack11", serviceType="pod_e", startTimestamp="1568440021",
     #                                                                 endTimestamp="1568440030", algorithm="direct"))
     # # 硬件能耗分解请求
-    # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="compute01", serviceType="hardware", startTimestamp="1568510603",
-    #                                                                 endTimestamp="1568510606", algorithm="xgboost"))
-    # # 硬件能耗分解请求
-    # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(serviceType="qos", entityID="compute01",
-    #                                                                          startTimestamp="4", endTimestamp="6",
-    #                                                                          algorithm="brb"))
-    # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(serviceType="dc", entityID="datacenter",
-    #                                                                          startTimestamp="23", endTimestamp="34",
-    #                                                                          algorithm="membership"))
+    res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="compute01", serviceType="hardware",
+                                                                             startTimestamp="1568440021", endTimestamp="1568440022",
+                                                                             algorithm="xgboost"))
+
     # 能耗预测请求
     # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="compute01", startTimestamp="1568294221",
     #                                                                          endTimestamp="1568440030", algorithm="rf",
@@ -53,4 +48,11 @@ if __name__ == "__main__":
     # # pod 能耗预测
     # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(entityID="linpack11", startTimestamp="1568440021", endTimestamp="1568440030",
     #                                                              algorithm="rf", serviceType="pod"))
+    # # 硬件能耗分解请求
+    # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(serviceType="qos", entityID="compute01",
+    #                                                                          startTimestamp="1568294221", endTimestamp="1568294222",
+    #                                                                          algorithm="brb"))
+    # res = stub.AlgorithmSupport(AlgorithmSupport_pb2.AlgorithmSupportRequest(serviceType="dc", entityID="datacenter",
+    #                                                                          startTimestamp="1568440167", endTimestamp="1568440168",
+    #                                                                          algorithm="membership"))
     print(res)

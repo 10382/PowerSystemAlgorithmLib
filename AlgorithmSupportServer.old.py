@@ -194,7 +194,7 @@ class AlgorithmSupportService(AlgorithmSupport_pb2_grpc.AlgorithmSupportServiceS
                     vm_power_dict = dict(zip(vm_df_dict.keys(), vm_power_list))
                     # 将物理机能耗也保存到 dict 中
                     vm_power_dict[request.entityID] = np.squeeze(pdu_df.values).tolist() if multi else pdu_df.values[0].tolist()
-                    return AlgorithmSupport_pb2.AlgorithmSupportResponse(result='%s' % (vm_power_dict))
+                    return AlgorithmSupport_pb2.AlgorithmSupportResponse(result="%s" % (vm_power_dict))
 
             # pod 能耗分解
             elif request.serviceType == "pod_e":
@@ -214,6 +214,7 @@ class AlgorithmSupportService(AlgorithmSupport_pb2_grpc.AlgorithmSupportServiceS
                     # 预处理，缺失值处理
                     pod_df = preprocess.fillna_decompose(pod_df, methods="interpolate")
                     pod_df = preprocess.fillna_decompose(pod_df, methods="fb")
+                    pod_df = preprocess.fillna_decompose(pod_df, methods="zero")
                     # print(pod_df)
                     # 根据该容器所在虚拟机去确定虚拟机类型，由于此处固定为2，因此写死
                     pod_df[TYPE_COL_NAME] = '2'
@@ -340,8 +341,8 @@ class AlgorithmSupportService(AlgorithmSupport_pb2_grpc.AlgorithmSupportServiceS
         if request.serviceType == "qos":
             # 且算法为 brb 算法
             if request.algorithm == "brb":
-                ret = main_opt_bayes(QOS_BRB_DATA.iloc[int(request.startTimestamp):int(request.endTimestamp), :],
-                                     int(request.startTimestamp), int(request.endTimestamp))
+                ret = main_opt_bayes(QOS_BRB_DATA.iloc[int(request.startTimestamp) % 300:int(request.endTimestamp) % 300, :],
+                                     int(request.startTimestamp) % 300, int(request.endTimestamp) % 300)
                 return AlgorithmSupport_pb2.AlgorithmSupportResponse(result="%s" % {"qos": ret})
         # 如果为数据中心指标评估
         if request.serviceType == "dc":
